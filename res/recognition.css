@@ -1,0 +1,49 @@
+.col-selected {
+    background-color: #dddddd;
+}
+.btn-category {
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 0;
+    margin-bottom: 0;
+    font-size: 24px;
+    text-decoration: underline;
+    background-color: inherit;
+    border: 0;
+    color: #333;
+}
+
+.btn-category:hover {
+    background-color: inherit;
+    border-color: #dddddd;
+}
+
+.btn-category::selection {
+    background-color: inherit;
+    border-color: #dddddd;
+}
+
+button:focus {
+    outline:0 !important;
+}
+
+.col-cat p {
+    text-align: justify;
+    margin-bottom: 50px;
+}
+
+.col-cat {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+#submit-nomination {
+    float: right;
+    width: 20%;
+}
+
+#submit-already {
+    float: right;
+    font-weight: bold;
+    font-size: 16px;
+}

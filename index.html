@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="recognition">
+    <meta name="author" content="martinusmaco">
+    <script src="bootstrap/js/jquery.min.js"></script>
+    <script src="bootstrap/js/moment.min.js"></script>
+    <script src="bootstrap/js/transition.js"></script>
+    <script src="bootstrap/js/collapse.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js" rel="stylesheet"></script>
+    <script src="bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="bootstrap/js/bootstrap-toggle.min.js"></script>
+    <script src="bootstrap/js/jspdf.min.js"></script>
+    <script src="bootstrap/js/bootstrap-dropdown.js"></script>
+    <script src="bootstrap/js/bootstrap-select.min.js"></script>
+    <script src="bootstrap/js/i18n/defaults-sk_SK.js"></script>
+    <script src="bootstrap/js/underscore-min.js"></script>
+
+    <script src="res/starter.js"></script>
+
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="res/checkboxes.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link href="res/recognition.css" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap/css/bootsnipp-toggle-switch.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-search.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-select-min.css">
+    <title>Local Recognition</title>
+
+</head>
+<body>
+    <div id="screen" class="container">
+        <div class="jumbotron">
+            <h1>Local SK&CZ GD&A Recognition</h1>
+            <h4>Hello Martin, please enter an ATTUID of your candidate, choose the category and provide your opinion why.</h4>
+            <hr>
+            <div class="form-group">
+                <label for="attuid-input">ATTUID of nominee</label>
+                <input type="text" class="form-control" id="attuid-input" maxlength="6" placeholder="ATTUID of nominee">
+                <small id="attuid-help" class="form-text text-muted">Only one person per nomination. You may only nominate one person in total.</small>
+            </div>
+            <div class="form-group">
+                <label for="reason-input">Provide a reason</label>
+                <textarea class="form-control" id="reason-input" rows="3" maxlength="500" placeholder="Please provide a reason"></textarea>
+                <small id="reason-help" class="form-text text-muted"></small>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-cat col-selected" id="cat-1">
+                    <button type="button" class="btn btn-category" onclick="categorySelected(1);">Performance Master</button>
+                    <hr>
+                    <p>A person who continuously delivers above and beyond their objectives, someone who significantly contributes in delivering team's and company's goals.</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-cat" id="cat-2">
+                    <button type="button" class="btn btn-category" onclick="categorySelected(2);">Outside the Box Thinker</button>
+                    <hr>
+                    <p>A person who can look at a problem and see a different solution, someone who is fearless enough to take things into a new innovative direction.</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 col-cat" id="cat-3">
+                    <button type="button" class="btn btn-category" onclick="categorySelected(3);">Team Spirit Keeper</button>
+                    <hr>
+                    <p>A person who keeps morale high and makes people look forward to a day at the office, someone who enriches the working day.</p>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" id="submit-nomination" onclick="submitNomination();">Submit nomination</button>
+            <span id="submit-already" class="form-text">You have already submitted one person. Thank you.</span>
+        </div>
+    </div>
+    <script>$(document).ready(function() {start();});</script>
+</body>
+</html>
